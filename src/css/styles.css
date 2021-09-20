@@ -1,0 +1,128 @@
+@import url('https://fonts.googleapis.com/css2?family=Dancing+Script&family=Montserrat+Alternates:wght@400;600;800&family=Palanquin:wght@300;400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Fira+Sans+Condensed:wght@300;400;500&family=Spartan:wght@600;800;900&display=swap');
+
+:root {
+  --font-headers: 'Montserrat Alternates', sans-serif; /* 400, 600, 800 */
+  --font-main: 'Palanquin', sans-serif; /* 300, 400 */
+  --font-decorative: 'Dancing Script', cursive; /* 400 */
+
+  --font-blog-headers: 'Spartan', sans-serif; /* 600, 800, 900 */
+  --font-blog-main: 'Fira Sans Condensed', sans-serif; /* 300, 400, 500 */
+}
+
+/* Typography */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-headers);
+  font-weight: 800;
+}
+body {
+  font-family: var(--font-main);
+}
+.useDecFont {
+  font-family: var(--font-decorative);
+}
+
+.blogTitle,
+.blogSubTitle {
+  font-family: var(--font-blog-headers);
+}
+
+/* Base Styles */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1150px;
+  padding: 1.75rem;
+  margin: 0 auto;
+}
+a {
+  text-decoration: none;
+  color: #000;
+  transition: 0.01s all;
+}
+a:hover {
+  transform: scale(1.05);
+  opacity: .8;
+}
+a:active {
+  transform: scale(.98);
+}
+a:visited {
+  font-style: italic;
+}
+
+/* Home page */
+.homePage {
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background-color: #141b24;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+}
+
+.homeWrapper {
+  height: 40vh;
+  min-height: 400px;
+  display: grid;
+  justify-items: center;
+}
+
+.homeTitle {
+  font-size: 4rem;
+  letter-spacing: .2rem;  
+  margin: 0;
+  text-transform: uppercase;
+}
+.homeSubTitle {
+  font-size: 2rem;
+  font-family: var(--font-headers);
+  font-weight: 800;
+  letter-spacing: .5rem;
+}
+.homeTitle,
+.homeSubTitle,
+.enter {
+  text-align: center;
+  background: url('../images/title-page-placeholder.JPG') center / contain;
+  -webkit-background-clip: text;
+    background-clip: text;
+  color: transparent;
+}
+.enter {
+  padding: .5rem 2rem;
+  font-family: var(--font-main);
+  font-weight: bolder;
+  font-size: 2.5rem;
+  letter-spacing: .2rem;
+  text-decoration: underline solid #622c3481;
+  display: grid;
+  align-items: center;
+  justify-items: center;
+  cursor: pointer;
+}
+.enter:hover {
+  transform: unset;
+  text-decoration: underline solid #98cbcf6b;
+}
+
+
+
+/* Blog */
+
+.cardLink:hover {
+  transform: unset;
+  opacity: .8;
+}
