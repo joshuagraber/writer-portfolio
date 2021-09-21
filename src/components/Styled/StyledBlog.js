@@ -23,6 +23,10 @@ export const StyledBlogHeader = styled.header`
     letter-spacing: .2rem;
     text-transform: uppercase;
   }
+  .titleLink:hover {
+    transform: unset;
+    opacity: unset;
+  }
   .blogTitle,
   .blogSubTitle {
     text-align: center;
@@ -41,6 +45,17 @@ export const StyledBlogHeader = styled.header`
   @media (min-width: 700px) {
     .blogTitle {
       font-size: 9rem;
+    }
+    .blogSubTitle {
+      font-size: 2.8rem;
+    }
+  }
+  @media (min-width: 900px) {
+    .blogTitle {
+      font-size: 11rem;
+    }
+    .blogSubTitle {
+      font-size: 3rem;
     }
   }
   

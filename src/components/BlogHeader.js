@@ -43,18 +43,20 @@ const BlogHeader = () => {
       onMouseMove={shadow}>
       <div className="wrapper headerWrap">
         <Link to={'/about'} className="backHome">Back Home</Link>
-        <h1 
-          className="blogTitle" 
-          style={{textShadow: 
-                `${walks.x}px ${walks.y}px 0 rgba(${walks.cX}, ${walks.cY}, ${walks.cZ}, 0.7),
-                ${walks.x * -1}px ${walks.y}px 0 rgba(${walks.cX * -1}, ${walks.cY}, ${walks.cZ}, 0.7),
-                ${walks.x}px ${walks.y * -1}px 0 rgba(${walks.cX}, ${walks.cY * -1}, ${walks.cZ}, 0.7),
-                ${walks.x * -1}px ${walks.y * -1}px 0 rgba(${walks.cX}, ${walks.cY * -1}, ${walks.cZ * -1}, 0.7)
-                `
-          }}>
-        I/O
-        </h1>
-        <p className="blogSubTitle">A blog on being<br/>on (and Off) the Internet</p>
+        <Link to='/io' className="titleLink">
+          <h1 
+            className="blogTitle" 
+            style={{textShadow: 
+                  `${walks.x}px ${walks.y}px 0 rgba(${walks.cX}, ${walks.cY}, ${walks.cZ}, 0.7),
+                  ${walks.x * -1}px ${walks.y}px 0 rgba(${walks.cX * -1}, ${walks.cZ}, ${walks.cY}, 0.7),
+                  ${walks.x}px ${walks.y * -1}px 0 rgba(${walks.cX}, ${walks.cZ * -1}, ${walks.cY}, 0.7),
+                  ${walks.x * -1}px ${walks.y * -1}px 0 rgba(${walks.cX}, ${walks.cZ * -1}, ${walks.cY * -1}, 0.7)
+                  `
+            }}>
+          I/O
+          </h1>
+          <p className="blogSubTitle">A blog on being<br/>on (and off) the Internet</p>
+        </Link>
       </div>
     </StyledBlogHeader>
   )
