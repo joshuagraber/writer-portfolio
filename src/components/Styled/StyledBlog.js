@@ -172,13 +172,59 @@ export const StyledPost = styled.div`
   figure:hover figcaption {
     opacity: 1;
   }
-  img {
+  .blogPost img {
     width: 100%;
     height: auto;
     display: block;
     border-radius: 5px;
   }
-  p {
+  .blogPost p {
     margin: 1rem 0;
+  }
+
+  ${'' /* Comments section */}
+  .comments {
+    margin: 3rem 0 0;
+  }
+  h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+  .comments {
+    padding: 1.5rem;
+    border: 2px solid ${props => props.currentColors.accentPop};
+    border-radius: 5px;
+  }
+  .commentsContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+  }
+  .commentWrap {
+    background: rgba(0,0,0, .3);
+    border-radius: 5px;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    gap: 20px;
+  }
+  .info {
+    display: flex;
+    flex-direction: column;
+  }
+  .name {
+    font-size: 1rem;
+    font-weight: 400;
+  }
+  .date {
+    font-weight: 300;
+    font-size: .8rem;
+  }
+  .formDiv {
+    width: 100%;
+    margin: 2rem 0 0;
+    padding: 1.5rem;
+    border: 2px solid ${props => props.currentColors.accentPop};
+    border-radius: 5px;
   }
 `
