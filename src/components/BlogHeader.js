@@ -42,7 +42,7 @@ const BlogHeader = () => {
       currentColors={currentColors}
       onMouseMove={shadow}>
       <div className="wrapper headerWrap">
-        <Link to={'/about'} className="backHome">Back Home</Link>
+        <Link to={'/about'} className="backHome"><i className="fas fa-arrow-left"/> Back Home</Link>
         <Link to='/io' className="titleLink">
           <h1 
             className="blogTitle" 

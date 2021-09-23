@@ -26,13 +26,13 @@ const Post = () => {
   // Gets comment data
   const getCommentData = useCallback(() => {
     if (!postToDisplay) return;
-    axios.get(`http://localhost:8888/wp-json/wp/v2/comments?post=${postToDisplay.id}`)
-      .then(response => {
-        setComments(response.data);
-      })
-      .catch(error => {
-        console.error(error);
-      })
+      axios.get(`http://localhost:8888/wp-json/wp/v2/comments?post=${postToDisplay.id}`)
+        .then(response => {
+          setComments(response.data);
+        })
+        .catch(error => {
+          console.error(error);
+        })
   }, [postToDisplay] )
 
   // Renders comment data to div
@@ -160,7 +160,7 @@ const Post = () => {
                         <Field as="textarea" name="comment" />
                         <ErrorMessage name="comment" component="div" />
                       </div>
-                      <button type="submit" disabled={isSubmitting}>
+                      <button className="commentBtn" type="submit" disabled={isSubmitting}>
                         Submit
                       </button>
                     </Form>
@@ -170,7 +170,7 @@ const Post = () => {
             </div>
           </div>
         ) 
-        : ('')
+        : ('') // If no post to display, display nothing
       }
     </StyledPost>
   )

@@ -121,6 +121,7 @@ export const StyledBlogPreview = styled.div`
   }
   h3 {
     color: ${props => props.currentColors.text};
+    padding: .5rem;
   }
   .imgContainer {
     width: 100%;
@@ -143,10 +144,11 @@ export const StyledPost = styled.div`
 
   .blogPostWrap {
     width: 100%;
+    margin-top: 3rem;
   }
 
   h2 {
-    font-size: 2rem;
+    font-size: 2.75rem;
     text-align: center;
     margin-bottom: 2rem;
   }
@@ -187,6 +189,7 @@ export const StyledPost = styled.div`
     margin: 3rem 0 0;
   }
   h3 {
+    font-size: 2.1rem;
     text-align: center;
     margin-bottom: 1rem;
   }
@@ -226,5 +229,83 @@ export const StyledPost = styled.div`
     padding: 1.5rem;
     border: 2px solid ${props => props.currentColors.accentPop};
     border-radius: 5px;
+  }
+  .commentForm {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  .nameDiv,
+  .emailDiv,
+  .commentDiv,
+  .commentBtn {
+    grid-column: 1 / -1;
+  }
+  .nameDiv,
+  .emailDiv,
+  .commentDiv {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+  }
+  .commentForm label {
+    font-size: 1.5rem;
+    text-transform: uppercase;
+    letter-spacing: .1rem;
+  }
+  input[name="name"],
+  input[name="email"],
+  textarea {
+    border: none;
+    border: 2px solid ${props => props.currentColors.accentPop};
+    border-radius: 5px;
+    background: rgba(255,255,255, .1);
+    padding: .5rem;
+    font-family: var(--font-main);
+    font-size: 1.05rem;
+    color: ${props => props.currentColors.text};
+  }
+  input[name="name"]:active,
+  input[name="email"]:active,
+  textarea:active,
+  input[name="name"]:focus,
+  input[name="email"]:focus,
+  textarea:focus {
+    outline: none;
+    border: none;
+    border: 3px solid ${props => props.currentColors.accentDark};
+  }
+  input[name="name"],
+  input[name="email"] {
+    min-height: 40px;
+  }
+  textarea[name="comment"] {
+    min-height: 200px;
+  }
+  .commentBtn {
+    justify-self: center;
+    background: none;
+    border: none;
+    outline: none;
+    height: 50px;
+    width: 150px;
+    padding: .5rem 1rem;
+    border: 3px solid ${props => props.currentColors.text};
+    border-radius: 5px;
+    background: rgba(255,255,255, .1);
+    color: ${props => props.currentColors.text};
+    font-size: 1.2rem;
+    text-transform: uppercase;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+  }
+  .commentBtn:hover {
+    font-size: 1.3rem;
+  }
+  .commentBtn:active {
+    transform: scale(1.02);
   }
 `
