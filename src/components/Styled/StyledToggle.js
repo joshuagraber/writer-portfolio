@@ -1,6 +1,7 @@
 import styled from 'styled-components';
 
 export const StyledToggle = styled.div`
+  z-index: 10;
   color: ${props => props.currentColors.text};
   background: ${props => props.currentColors.bg};
   position: fixed;

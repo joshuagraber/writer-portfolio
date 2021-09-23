@@ -16,7 +16,7 @@ const DarkModeToggle = () => {
       onClick={handleToggleClick}>
       <div className="togWrap">
         {isDarkMode ? 
-          (<i className="far fa-lightbulb"/>) : 
+          (<i className="fas fa-sun"/>) : 
           (<i className="fas fa-moon"/>)}
         {isDarkMode ? 
           (<div className="togText"><span>Light</span><span>Mode</span></div>) : 

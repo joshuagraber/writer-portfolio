@@ -41,6 +41,7 @@ export const StyledBlogHeader = styled.header`
     font-size: 2rem;
     letter-spacing: .3rem;
     line-height: 1.5;
+    text-decoration: 3px solid underline ${props => props.currentColors.accentLight};
   }
   @media (min-width: 700px) {
     .blogTitle {
@@ -196,12 +197,12 @@ export const StyledPost = styled.div`
   .comments {
     padding: 1.5rem;
     border: 2px solid ${props => props.currentColors.accentPop};
-    border-radius: 5px;
+    border-radius: 10px;
   }
   .commentsContainer {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+    gap: 10px;
   }
   .commentWrap {
     background: rgba(0,0,0, .3);
