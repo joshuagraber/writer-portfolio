@@ -22,7 +22,16 @@ export const StyledFooter = styled.footer`
   .linkList {
     list-style-type: none;
     display: flex;
-    gap: 10px;
+    gap: 20px;
+  }
+  .socialLink a {
+    font-size: 1.7rem;
+    color: ${props => props.currentColors.text};
+    transition: 0.2s all;
+  }
+  .socialLink a:active,
+  .socialLink a:focus {
+    transform: scale(.97);
   }
 
   @media (min-width: 600px) {

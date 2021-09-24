@@ -3,7 +3,7 @@ import styled from 'styled-components';
 
 
 export const StyledBlogHeader = styled.header`
-  min-height: 400px;
+  min-height: 100vh;
   background-color: ${props => props.currentColors.bg};
   color: ${props => props.currentColors.text};
 
@@ -22,6 +22,13 @@ export const StyledBlogHeader = styled.header`
     font-size: 1.3rem;
     letter-spacing: .2rem;
     text-transform: uppercase;
+    display: flex;
+    gap: 15px;
+    align-items: center;
+  }
+  .backHomeText {
+    display: flex;
+    flex-direction: column;
   }
   .titleLink:hover {
     transform: unset;
@@ -34,7 +41,7 @@ export const StyledBlogHeader = styled.header`
   }
   .blogTitle {
     text-transform: uppercase;
-    font-size: 5rem;
+    font-size: 9rem;
     letter-spacing: .2rem;
   }
   .blogSubTitle {
@@ -45,7 +52,7 @@ export const StyledBlogHeader = styled.header`
   }
   @media (min-width: 700px) {
     .blogTitle {
-      font-size: 9rem;
+      font-size: 12rem;
     }
     .blogSubTitle {
       font-size: 2.8rem;
@@ -53,7 +60,7 @@ export const StyledBlogHeader = styled.header`
   }
   @media (min-width: 900px) {
     .blogTitle {
-      font-size: 11rem;
+      font-size: 15rem;
     }
     .blogSubTitle {
       font-size: 3rem;
@@ -115,7 +122,7 @@ export const StyledBlogContainer = styled.div`
 
 export const StyledBlogPreview = styled.div`
   width: 100%;
-
+  
   .blogCard {
     display: flex;
     flex-direction: column;
@@ -132,6 +139,7 @@ export const StyledBlogPreview = styled.div`
   img {
     width: 100%;
     object-fit: contain;
+    border-radius: 5px;
   }
 `
 
@@ -218,11 +226,15 @@ export const StyledPost = styled.div`
   }
   .name {
     font-size: 1rem;
-    font-weight: 400;
+    font-weight: bold;
   }
   .date {
     font-weight: 300;
     font-size: .8rem;
+    font-style: italic;
+  }
+  .comment {
+    font-size: 1.1rem;
   }
   .formDiv {
     width: 100%;
@@ -307,6 +319,6 @@ export const StyledPost = styled.div`
     font-size: 1.3rem;
   }
   .commentBtn:active {
-    transform: scale(1.02);
+    transform: scale(.97);
   }
 `

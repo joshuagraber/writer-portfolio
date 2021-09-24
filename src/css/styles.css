@@ -50,7 +50,7 @@ a {
   transition: 0.01s all;
 }
 a:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
   opacity: .8;
 }
 a:active {
@@ -124,5 +124,5 @@ a:visited {
 
 .cardLink:hover {
   transform: unset;
-  opacity: .8;
+  opacity: .75;
 }

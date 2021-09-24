@@ -26,7 +26,7 @@ export const StyledToggle = styled.div`
     flex-direction: column;
   }
 
-  @media (min-width: 1225px) {
-    left: calc((100% - 1225px) / 2);
+  @media (min-width: 1240px) {
+    left: calc((100% - 1240px) / 2);
   }
 `

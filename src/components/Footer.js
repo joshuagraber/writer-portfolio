@@ -12,9 +12,8 @@ const Footer = () => {
         <div className="footerLinks">
           <h3>Contact</h3>
             <ul className="linkList">
-              <li>Link 1</li>
-              <li>Link 2</li>
-              <li>Link 3</li>
+              <li className="socialLink"><a href="mailto:joshua.d.graber@gmail.com"><i className="fas fa-envelope"></i></a></li>
+              <li className="socialLink"><a href="https://www.twitter.com/joshuadgraber" target="_blank" rel="noreferrer"><i className="fab fa-twitter"></i></a></li>
             </ul>
         </div>
       </div>

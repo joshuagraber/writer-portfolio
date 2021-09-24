@@ -68,13 +68,12 @@ export const StyledMainNav = styled.div`
   }
   nav li {
     display: block;
-    height: 40px;
-    min-width: 80px;
   }
   nav a,
   nav.show a {
-    width: 100%;
-    height: 100%;
+    display: block;
+    height: 40px;
+    min-width: 80px;
   }
   nav.show {
     display: block;
@@ -97,7 +96,7 @@ export const StyledMainNav = styled.div`
     width: 50%;
     max-width: 300px;
     margin: 0 auto;
-    padding: 1.5rem;
+    padding: .5rem;
     background: rgba(0,0,0, .2);
     border-radius: 2px;
   }

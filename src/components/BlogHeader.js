@@ -17,24 +17,23 @@ const BlogHeader = () => {
   const { width, height, ref } = useResizeDetector();  
 
   const shadow = (e) => {
-    const walk = 100;
-    const colorWalk = 255;
-    let {clientX: x, clientY: y} = e;
+   
+      const walk = 100;
+      const colorWalk = 255;
+      let {clientX: x, clientY: y} = e;
 
-    const xWalk = Math.round((x / width * walk) - (walk / 2));
-    const yWalk = Math.round((y / height * walk) - (walk / 2));
-    const colorX = Math.round((x / width * colorWalk) - (colorWalk / 2));
-    const colorY = Math.round((y / height * colorWalk) - (colorWalk / 2));
-    const colorZ = Math.round((x + y / ((height * width) * colorWalk)) - (colorWalk / 2));
+      const xWalk = Math.round((x / width * walk) - (walk / 2));
+      const yWalk = Math.round((y / height * walk) - (walk / 2));
+      const colorX = Math.round((x / width * colorWalk) - (colorWalk / 2));
+      const colorY = Math.round((y / height * colorWalk) - (colorWalk / 2));
+      const colorZ = Math.round((x + y / ((height * width) * colorWalk)) - (colorWalk / 2));
 
-    setWalks({x: xWalk, 
-              y: yWalk, 
-              cX: colorX, 
-              cY: colorY, 
-              cZ: colorZ});
+      setWalks({x: xWalk, 
+                y: yWalk, 
+                cX: colorX, 
+                cY: colorY, 
+                cZ: colorZ});
   }
-
-
 
   return (
     <StyledBlogHeader 
@@ -42,7 +41,7 @@ const BlogHeader = () => {
       currentColors={currentColors}
       onMouseMove={shadow}>
       <div className="wrapper headerWrap">
-        <Link to={'/about'} className="backHome"><i className="fas fa-arrow-left"/> Back Home</Link>
+        <Link to={'/about'} className="backHome"><i className="fas fa-arrow-left"/>  <div className="backHomeText"><span> Back To </span> <span>joshuadgraber.com</span></div> </Link>
         <Link to='/io' className="titleLink">
           <h1 
             className="blogTitle" 
