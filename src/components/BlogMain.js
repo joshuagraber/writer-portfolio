@@ -1,12 +1,12 @@
+// Imports
+// React
 import React, { useState, useEffect, useCallback } from 'react';
+// Libraries
 import ReactPaginate from 'react-paginate';
-
 // Context
 import { usePortfolioContext } from './Context';
-
 // Component
 import PostPreview from './PostPreview';
-
 //Styled Component
 import { StyledBlogContainer } from './Styled/StyledBlog';
 
@@ -29,12 +29,12 @@ const BlogMain = () => {
   const updatePosts = useCallback(() => {
     const offsetPosts = postData.slice(offset, offset + perPage);
       const offsetPostData = offsetPosts.map(( post ) => 
-          <PostPreview
-            key={post.id}
-            img={post.better_featured_image.source_url}
-            title={post.title.rendered}
-            slug={post.slug}
-          />
+            <PostPreview
+              key={post.id}
+              img={post.better_featured_image.source_url}
+              title={post.title.rendered}
+              slug={post.slug}
+            />
       )
       setThumbData(offsetPostData);
       setPageCount(Math.ceil(postData.length / perPage));

@@ -72,7 +72,6 @@ a:visited {
   align-items: center;
   justify-items: center;
 }
-
 .homeWrapper {
   height: 40vh;
   min-height: 400px;
@@ -126,3 +125,6 @@ a:visited {
   transform: unset;
   opacity: .75;
 }
+
+
+/* Animations */

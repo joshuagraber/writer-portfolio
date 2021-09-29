@@ -7,10 +7,8 @@ import App from './App';
 import { PortfolioContextProvider } from './components/Context/index';
 
 ReactDOM.render(
-  <React.StrictMode>
     <PortfolioContextProvider>
       <App />
-    </PortfolioContextProvider>
-  </React.StrictMode>,
+    </PortfolioContextProvider>,
   document.getElementById('root')
 );

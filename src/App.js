@@ -1,5 +1,9 @@
+//Imports
+// React
 import React from 'react';
+// Libraries
 import { BrowserRouter as Router, Route } from 'react-router-dom';
+// Context
 import { usePortfolioContext } from './components/Context';
 
 // Custom function imports
@@ -26,10 +30,9 @@ const App = () => {
 
   return (
     <Router>
-    
       <ScrollToTop />
 
-      <Route exact path='/' component={Home} />
+          <Route exact path='/' component={Home} />
 
       <Route path={['/about', '/work']}> 
         <MainHeader />

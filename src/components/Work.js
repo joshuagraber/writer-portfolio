@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useCallback } from 'react';
+import { CSSTransition, SwitchTransition } from 'react-transition-group';
 
 // Components
 import WorkEditing from './WorkEditing';
@@ -47,7 +48,17 @@ const Work = () => {
           </ul>
         </nav>
         <div className="workBody">
-          {setWorkDiv()}
+          <SwitchTransition mode={'out-in'}>
+            <CSSTransition
+              in={displayed ? true : false}
+              classNames="workInner"
+              appear
+              mountOnEnter
+              unmountOnExit
+              timeout={{appear: 500, enter: 500, leave: 200}}>
+                {setWorkDiv()}
+            </CSSTransition>
+          </SwitchTransition>
         </div>
       </div>
     </div>
