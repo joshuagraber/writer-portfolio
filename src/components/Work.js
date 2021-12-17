@@ -1,9 +1,9 @@
 import React, { useState, useEffect, useCallback } from 'react';
-import { CSSTransition, SwitchTransition } from 'react-transition-group';
+import { CSSTransition } from 'react-transition-group';
 
 // Components
 import WorkEditing from './WorkEditing';
-import WorkInterviews from './WorkInterviews';
+import WorkDev from './WorkWebDev';
 import WorkWriting from './WorkWriting';
 
 // Styled Components
@@ -12,6 +12,7 @@ import { usePortfolioContext } from './Context';
 
 
 const Work = () => {
+  // !!!!!!!!!!!      IN ORDER TO MAKE THIS (THE TRANSITIONS) WORK, SET DATA FOR EACH INNER WORK DIV IN AN OBJECT, AND PASS IT TO A NEW 'INNER WORK' COMPONENT, AND WRAP THAT IN THE TRANSITION, THEN TRY IT. THIS IS TOO VANILLA OF A SOLUTION.     !!!!!!!!!!!!!! 
   const { currentColors } = usePortfolioContext().darkMode;
   const [ displayed, setDisplayed ] = useState('writing');
 
@@ -24,8 +25,8 @@ const Work = () => {
       return <WorkWriting />
     } else if (displayed === 'editing') {
       return <WorkEditing />
-    } else if (displayed === 'interviews') {
-      return <WorkInterviews />
+    } else if (displayed === 'webDev') {
+      return <WorkDev />
     }
   }, [displayed])
 
@@ -44,11 +45,10 @@ const Work = () => {
           <ul>
             <li className={displayed === 'writing' ? 'active' : ''} id='writing'>Writing</li>
             <li className={displayed === 'editing' ? 'active' : ''} id='editing'>Editing</li>
-            <li className={displayed === 'interviews' ? 'active' : ''} id='interviews'>Interviews</li>
+            <li className={displayed === 'webDev' ? 'active' : ''} id='webDev'>Web Development</li>
           </ul>
         </nav>
         <div className="workBody">
-          <SwitchTransition mode={'out-in'}>
             <CSSTransition
               in={displayed ? true : false}
               classNames="workInner"
@@ -58,7 +58,6 @@ const Work = () => {
               timeout={{appear: 500, enter: 500, leave: 200}}>
                 {setWorkDiv()}
             </CSSTransition>
-          </SwitchTransition>
         </div>
       </div>
     </div>

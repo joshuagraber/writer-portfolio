@@ -30,6 +30,11 @@ export const StyledAbout = styled.div`
   .about p {
     line-height: 2;
   }
+  figcaption {
+    font-size: 10px;
+    font-family: var(--font-headers);
+    text-align: center;
+  }
 
   @media (min-width: 800px) {
     .about {
@@ -60,7 +65,7 @@ export const StyledWork = styled.div`
     list-style-type: none;
     display: flex;
     flex-wrap: wrap;
-    gap: 15px;
+    gap: 10px;
   }
   .innerWorkNav li {
     flex: 1;
@@ -68,11 +73,12 @@ export const StyledWork = styled.div`
     background: rgba(0,0,0, .3);
     padding: 1.5rem 1rem;
     border-radius: 10px 10px 0 0;
-    font-size: 1.3rem;
+    font-size: 1.1rem;
     text-transform: uppercase;
     display: flex;
     align-items: center;
     justify-content: center;
+    text-align: center;
     cursor: pointer;
   }
 
@@ -100,7 +106,7 @@ export const StyledWork = styled.div`
       flex: 1 1 100%;
     }
     #editing,
-    #interviews {
+    #webDev {
       border-radius: 10px;
     }
   }

@@ -4,8 +4,9 @@ import { TransitionGroup } from 'react-transition-group';
 const WorkEditing = () => {
   return (
     <TransitionGroup
-    className="workInner"
+    className='workInner'
     type='div'
+    in='true'
     >
       <h3>Hello EDITING DIV</h3>
       <p>Lorem ipsum dolor </p> <p>sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur. Consequat id porta nibh venenatis cras sed felis. Donec ac odio tempor orci dapibus ultrices in. Lorem sed risus ultricies tristique nulla aliquet enim. </p>
