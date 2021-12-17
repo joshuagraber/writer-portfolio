@@ -36,11 +36,11 @@ const Work = () => {
 
   return (
   <StyledWork currentColors={currentColors}>
-    <div className="work">
+    <div className='work'>
       <h2>My Work</h2>
-      <div className="workContainer">
+      <div className='workContainer'>
         <nav 
-          className="innerWorkNav" 
+          className='innerWorkNav' 
           onClick={handleWorkClick}>
           <ul>
             <li className={displayed === 'writing' ? 'active' : ''} id='writing'>Writing</li>
@@ -48,10 +48,10 @@ const Work = () => {
             <li className={displayed === 'webDev' ? 'active' : ''} id='webDev'>Web Development</li>
           </ul>
         </nav>
-        <div className="workBody">
+        <div className='workBody'>
             <CSSTransition
               in={displayed ? true : false}
-              classNames="workInner"
+              classNames='workInner'
               appear
               mountOnEnter
               unmountOnExit
