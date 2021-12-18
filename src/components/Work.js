@@ -1,38 +1,24 @@
-import React, { useState, useEffect, useCallback } from 'react';
+import React, { useState } from 'react';
 import { CSSTransition } from 'react-transition-group';
 
 // Components
-import WorkEditing from './WorkEditing';
-import WorkDev from './WorkWebDev';
-import WorkWriting from './WorkWriting';
+import WorkInner from './WorkInner';
 
 // Styled Components
 import { StyledWork } from './Styled/StyledInnerPages';
 import { usePortfolioContext } from './Context';
 
+// Data
+import {workInnerText} from '../data';
+
 
 const Work = () => {
-  // !!!!!!!!!!!      IN ORDER TO MAKE THIS (THE TRANSITIONS) WORK, SET DATA FOR EACH INNER WORK DIV IN AN OBJECT, AND PASS IT TO A NEW 'INNER WORK' COMPONENT, AND WRAP THAT IN THE TRANSITION, THEN TRY IT. THIS IS TOO VANILLA OF A SOLUTION.     !!!!!!!!!!!!!! 
   const { currentColors } = usePortfolioContext().darkMode;
   const [ displayed, setDisplayed ] = useState('writing');
 
   const handleWorkClick = (e) => {
     setDisplayed(e.target.id);
   }
-
-  const setWorkDiv = useCallback(() => {
-    if (displayed === 'writing') {
-      return <WorkWriting />
-    } else if (displayed === 'editing') {
-      return <WorkEditing />
-    } else if (displayed === 'webDev') {
-      return <WorkDev />
-    }
-  }, [displayed])
-
-  useEffect(() => {
-    setWorkDiv();
-  }, [setWorkDiv]);
 
   return (
   <StyledWork currentColors={currentColors}>
@@ -49,20 +35,22 @@ const Work = () => {
           </ul>
         </nav>
         <div className='workBody'>
-            <CSSTransition
-              in={displayed ? true : false}
-              classNames='workInner'
-              appear
-              mountOnEnter
-              unmountOnExit
-              timeout={{appear: 500, enter: 500, leave: 200}}>
-                {setWorkDiv()}
-            </CSSTransition>
+          <CSSTransition
+            in={!displayed ? false : true}
+            classNames='workInner'
+            appear
+            unmountOnExit
+            timeout={{appear: 500, enter: 500, leave: 200}}>
+              {<WorkInner 
+                data={workInnerText}
+                key={displayed}
+                displayed={displayed}
+              />}
+          </CSSTransition>
         </div>
       </div>
     </div>
   </StyledWork>
 )}
 
-
-export default Work
+export default Work;  

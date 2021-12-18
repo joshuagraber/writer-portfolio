@@ -17,3 +17,38 @@ export const colors = {
     accentPop: '#622c34' // pinkish grey
   },
 }
+
+// Copy for Inner Work Divs
+export const workInnerText = {
+  writing: {
+    headline: 'Hello WRITING DIV',
+    body: [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur. Consequat id porta nibh venenatis cras sed felis. Donec ac odio tempor orci dapibus ultrices in. Lorem sed risus ultricies tristique nulla aliquet enim. ',
+
+      'Integer quis auctor elit sed vulputate. Odio morbi quis commodo odio aenean sed adipiscing . Hendrerit dolor magna eget est lorem ipsum. Ullamcorper a lacus vestibulum sed arcu non. Massa vitae tortor condimentum lacinia quis vel.'
+    ]
+  },
+  editing: {
+    headline: 'Hello EDITING DIV',
+    body: [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur. Consequat id porta nibh venenatis cras sed felis. Donec ac odio tempor orci dapibus ultrices in. Lorem sed risus ultricies tristique nulla aliquet enim. ',
+
+      'Integer quis auctor elit sed vulputate. Odio morbi quis commodo odio aenean sed adipiscing . Hendrerit dolor magna eget est lorem ipsum. Ullamcorper a lacus vestibulum sed arcu non. Massa vitae tortor condimentum lacinia quis vel.',
+
+      'eget dolor morbi non arcu. Nunc id cursus metus aliquam eleifend. Hendrerit dolor magna eget est lorem ipsum. Ullamcorper a lacus vestibulum sed arcu non. Massa vitae tortor condimentum lacinia quis vel.',
+
+      'diam donec. Sed elementum tempus egestas sed. Amet porttitor eget dolor morbi non arcu. Nunc id cursus metus aliquam eleifend'
+    ]
+  },
+  webDev: {
+    headline: 'Hello DEV DIV',
+    body: [
+      'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Eget est lorem ipsum dolor sit amet consectetur. Consequat id porta nibh venenatis cras sed felis. Donec ac odio tempor orci dapibus ultrices in. Lorem sed risus ultricies tristique nulla aliquet enim. ',
+
+      'Integer quis auctor elit sed vulputate. Odio morbi quis commodo odio aenean sed adipiscing diam donec. Sed elementum tempus egestas sed. Amet porttitor eget dolor morbi non arcu. Nunc id cursus metus aliquam eleifend. Hendrerit dolor magna eget est lorem ipsum. Ullamcorper a lacus vestibulum sed arcu non. Massa vitae tortor condimentum lacinia quis vel.',
+      
+      'eget dolor morbi non arcu. Nunc id cursus metus aliquam eleifend. Hendrerit dolor magna eget est lorem ipsum. Ullamcorper a lacus vestibulum sed arcu non. Massa vitae tortor condimentum lacinia quis vel.'
+    ]
+    
+  }
+}

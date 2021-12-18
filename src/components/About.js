@@ -3,8 +3,8 @@ import { usePortfolioContext } from './Context';
 
 import { StyledAbout } from './Styled/StyledInnerPages';
 
-import profileImgDark from '../images/hs-dark-square[rosselli].jpg';
-import profileImgLight from '../images/hs-light-square[geyer].jpg';
+import profileImgDark from '../images/hs-dark-square.png';
+import profileImgLight from '../images/hs-light-square.png';
 
 const About = () => {
   const { currentColors, isDarkMode } = usePortfolioContext().darkMode;
