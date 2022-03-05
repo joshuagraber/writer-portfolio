@@ -1,8 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-
-const Home = () => { // Style this in reg. sheet, auto dark theme
+const Home = () => {
+  // Style this in reg. sheet, auto dark theme
   return (
     <div className="homePage">
       <div className="homeWrapper">
@@ -13,8 +13,7 @@ const Home = () => { // Style this in reg. sheet, auto dark theme
         </Link>
       </div>
     </div>
-  )
-}
+  );
+};
 
-
-export default Home
+export default Home;

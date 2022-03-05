@@ -9,13 +9,12 @@ import { usePortfolioContext } from './Context';
 // Styled Components
 import { StyledBlogPreview } from './Styled/StyledBlog';
 
-
-const PostPreview = ({img, title, slug, key}) => {
+const PostPreview = ({ img, title, slug, key }) => {
   PostPreview.propTypes = {
     img: PropTypes.string,
     title: PropTypes.string,
     slug: PropTypes.string
-  }
+  };
 
   const { currentColors } = usePortfolioContext().darkMode;
 
@@ -31,9 +30,8 @@ const PostPreview = ({img, title, slug, key}) => {
           </article>
         </StyledBlogPreview>
       </Link>
-    </div> 
-  )
-}
+    </div>
+  );
+};
 
-
-export default PostPreview
+export default PostPreview;

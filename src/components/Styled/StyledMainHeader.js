@@ -1,24 +1,22 @@
 import styled from 'styled-components';
 
-
-
 // Export MainHeader and Nav from here
 export const StyledMainHeader = styled.header`
   width: 100%;
-  background: ${props => props.currentColors.bg};
-  color: ${props => props.currentColors.text};
+  background: ${(props) => props.currentColors.bg};
+  color: ${(props) => props.currentColors.text};
 
   .headerWrap {
     padding-top: 3rem;
     padding-bottom: 3rem;
-    border-bottom: 2px solid ${props => props.currentColors.accentPop};
-    border-radius:  0 0 15px 15px;
+    border-bottom: 2px solid ${(props) => props.currentColors.accentPop};
+    border-radius: 0 0 15px 15px;
     display: flex;
     flex-direction: column;
     gap: 25px;
   }
   a {
-    color: ${props => props.currentColors.text};
+    color: ${(props) => props.currentColors.text};
   }
   .logo {
     display: flex;
@@ -36,10 +34,10 @@ export const StyledMainHeader = styled.header`
     font-size: 2.5rem;
     margin: 0;
     text-transform: uppercase;
-  } 
+  }
   .subTitle {
     font-size: 1.7rem;
-    letter-spacing: .1rem;
+    letter-spacing: 0.1rem;
   }
 
   @media (min-width: 600px) {
@@ -56,7 +54,7 @@ export const StyledMainHeader = styled.header`
       text-align: left;
     }
   }
-`
+`;
 
 export const StyledMainNav = styled.div`
   nav {
@@ -81,11 +79,11 @@ export const StyledMainNav = styled.div`
     width: 100%;
     margin: 0 auto;
     position: absolute;
-    top: ${props => props.headerHeight}px;
+    top: ${(props) => props.headerHeight}px;
     left: 50%;
     transform: translateX(-50%);
     padding: 1rem;
-    background: ${props => props.currentColors.bg};
+    background: ${(props) => props.currentColors.bg};
   }
   nav.show ul {
     flex-direction: column;
@@ -96,8 +94,8 @@ export const StyledMainNav = styled.div`
     width: 50%;
     max-width: 300px;
     margin: 0 auto;
-    padding: .5rem;
-    background: rgba(0,0,0, .2);
+    padding: 0.5rem;
+    background: rgba(0, 0, 0, 0.2);
     border-radius: 2px;
   }
   nav.show a {
@@ -111,7 +109,7 @@ export const StyledMainNav = styled.div`
     width: 100%;
   }
   .navActive {
-    text-decoration: underline solid ${props => props.currentColors.accent};
+    text-decoration: underline solid ${(props) => props.currentColors.accent};
   }
 
   .hamburger {
@@ -127,19 +125,19 @@ export const StyledMainNav = styled.div`
     height: 5px;
     width: 100%;
     border-radius: 99999px;
-    background-color: ${props => props.currentColors.text};
-    transition: .3s all;
+    background-color: ${(props) => props.currentColors.text};
+    transition: 0.3s all;
   }
   .hamburger.hide .bar1 {
-      --webkit-transform: translateY(34px) rotate(-405deg);
-        transform: translateY(34px) rotate(-405deg);
-  }      
+    --webkit-transform: translateY(34px) rotate(-405deg);
+    transform: translateY(34px) rotate(-405deg);
+  }
   .hamburger.hide .bar2 {
-      background-color: ${props => props.currentColors.bg};
-  }   
+    background-color: ${(props) => props.currentColors.bg};
+  }
   .hamburger.hide .bar3 {
-      --webkit-transform: rotate(405deg);
-        transform: rotate(405deg);
+    --webkit-transform: rotate(405deg);
+    transform: rotate(405deg);
   }
   @media (min-width: 600px) {
     align-self: flex-start;
@@ -159,7 +157,7 @@ export const StyledMainNav = styled.div`
       display: none;
     }
     .navActive {
-    text-decoration: underline solid ${props => props.currentColors.accent};
+      text-decoration: underline solid ${(props) => props.currentColors.accent};
     }
   }
-`
+`;

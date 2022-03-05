@@ -1,0 +1,26 @@
+{
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": ["eslint:recommended", "plugin:react/recommended"],
+  "parserOptions": {
+    "ecmaFeatures": {
+      "jsx": true
+    },
+    "ecmaVersion": "latest",
+    "sourceType": "module"
+  },
+  "plugins": ["react", "prettier/recommended"],
+  "rules": {
+    "react/no-danger": "warn",
+    // "react/no-invalid-html-attribute": "warn",
+    "react/no-unescaped-entities": ["error"],
+    "react/prefer-es6-class": ["warn", "always"],
+    "react/sort-prop-types": "warn",
+    "react/jsx-max-props-per-line": ["warn", { "maximum": { "single": 3, "multi": 1 } }],
+    "react/jsx-no-duplicate-props": ["warn"],
+    "react/react-in-jsx-scope": "warn",
+    "no-unused-expressions": "warn"
+  }
+}

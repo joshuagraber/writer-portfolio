@@ -1,2 +1,3 @@
 at
 node_modules
+.env*

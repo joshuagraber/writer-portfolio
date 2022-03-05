@@ -13,33 +13,36 @@ import { usePortfolioContext } from './Context';
 // Styled Component
 import { StyledPost } from './Styled/StyledBlog';
 
+import 'dotenv/config';
 
 const Post = () => {
-  const  { slug }  = useParams();
-  const [ postToDisplay, setPostToDisplay ] = useState(null);
-  const [ comments, setComments ] = useState(null);
-  const [ commentsToRender, setCommentsToRender ] = useState(null);
+  const { slug } = useParams();
+  const [postToDisplay, setPostToDisplay] = useState(null);
+  const [comments, setComments] = useState(null);
+  const [commentsToRender, setCommentsToRender] = useState(null);
 
   const { postData } = usePortfolioContext().data;
   const { currentColors } = usePortfolioContext().darkMode;
 
+  const { REACT_APP_API_URL } = process.env;
+
   // Gets comment data
   const getCommentData = useCallback(() => {
     if (!postToDisplay) return;
-      axios.get(`http://localhost:8888/wp-json/wp/v2/comments?post=${postToDisplay.id}`)
-        .then(response => {
-          setComments(response.data);
-        })
-        .catch(error => {
-          console.error(error);
-        })
-  }, [postToDisplay] )
+    axios
+      .get(`${REACT_APP_API_URL}/comments?post=${postToDisplay.id}`)
+      .then((response) => {
+        setComments(response.data);
+      })
+      .catch((error) => {
+        console.error(error);
+      });
+  }, [postToDisplay]);
 
   // Renders comment data to div
   const renderComments = useCallback(() => {
     if (!comments) return;
-    const coms = comments.map(com => {
-
+    const coms = comments.map((com) => {
       // Normalize  date for user timezone
       let date = new Date(com.date);
       let timezoneOffset = new Date(com.date).getTimezoneOffset();
@@ -48,91 +51,90 @@ const Post = () => {
       return (
         <div className="commentWrap" key={com.id}>
           <div className="info">
-            <div className="name">
-              {com.author_name}
-            </div>
-            <div className="date"> 
-              {<Moment // Uses Moment to easily format the date
-                local={true} 
-                format='MMMM Do, YYYY, h:mm A'>
-              {date}
-              </Moment>}
+            <div className="name">{com.author_name}</div>
+            <div className="date">
+              {
+                <Moment // Uses Moment to easily format the date
+                  local={true}
+                  format="MMMM Do, YYYY, h:mm A"
+                >
+                  {date}
+                </Moment>
+              }
             </div>
           </div>
           {/* The comment itself */}
-          <div className="comment" dangerouslySetInnerHTML={{__html: com.content.rendered}} />
+          <div className="comment" dangerouslySetInnerHTML={{ __html: com.content.rendered }} />
         </div>
-        )}
-      )
-    const sortedComs = coms.sort((a,b) => a.id < b.id ? 1 : -1); // Re-sorts comments oldest first
+      );
+    });
+    const sortedComs = coms.sort((a, b) => (a.id < b.id ? 1 : -1)); // Re-sorts comments oldest first
     setCommentsToRender(sortedComs); // updates state
-  }, [comments])
+  }, [comments]);
 
   // Posts new comment from form
-  const postComment = ( formData ) => {
-    axios.post( `http://localhost:8888/wp-json/wp/v2/comments?post=${postToDisplay.id}`, formData)
-    .then(function (response) { 
-      console.log(response); 
-    })
-    .catch(function (error) {
-      console.log(error);
-    });
-  }
-  
+  const postComment = (formData) => {
+    axios
+      .post(`${REACT_APP_API_URL}/comments?post=${postToDisplay.id}`, formData)
+      .then(function (response) {
+        console.log(response);
+      })
+      .catch(function (error) {
+        console.log(error);
+      });
+  };
+
   // Sets post to display
   useEffect(() => {
-    setPostToDisplay(postData.find(r => r.slug === slug));
+    setPostToDisplay(postData.find((r) => r.slug === slug));
     getCommentData();
-  }, [postToDisplay, setPostToDisplay, slug, postData, getCommentData])
+  }, [postToDisplay, setPostToDisplay, slug, postData, getCommentData]);
 
   // Sets comments to display
   useEffect(() => {
     renderComments();
-  }, [comments, renderComments])
-
+  }, [comments, renderComments]);
 
   return (
     <StyledPost currentColors={currentColors}>
-
-    {/* Display the post */}
-      { postToDisplay ? 
-        (
+      {/* Display the post */}
+      {
+        postToDisplay ? (
           <div className="blogPostWrap">
             <h2>{postToDisplay.title.rendered}</h2>
-            <div className="blogPost" dangerouslySetInnerHTML={{__html: `${postToDisplay.content.rendered}`}} />
-      
-      {/* Now the comment section */}
+            <div
+              className="blogPost"
+              dangerouslySetInnerHTML={{ __html: `${postToDisplay.content.rendered}` }}
+            />
+
+            {/* Now the comment section */}
             <div className="comments">
               <h3>Comments</h3>
-              <div className="commentsContainer">
-                {commentsToRender}
-              </div>
+              <div className="commentsContainer">{commentsToRender}</div>
             </div>
             <div>
-
-      {/* Now the comment form using Formik */}
+              {/* Now the comment form using Formik */}
               <div className="formDiv">
                 <h3>Join the Discussion!</h3>
                 <Formik
                   initialValues={{ email: '', name: '', comment: '' }}
-                  validate={values => {
+                  validate={(values) => {
                     const errors = {};
                     if (!values.email) {
                       errors.email = 'Required';
-                    } else if (
-                      !/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)
-                    ) {
+                    } else if (!/^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i.test(values.email)) {
                       errors.email = 'Invalid email address';
                     }
                     return errors;
                   }}
                   onSubmit={(values, { setSubmitting, resetForm }) => {
                     setTimeout(() => {
-                      const formData = { // Gets data from the form
+                      const formData = {
+                        // Gets data from the form
                         post: postToDisplay.id,
                         author_name: values.name,
                         author_email: values.email,
-                        content: values.comment,
+                        content: values.comment
                       };
                       postComment(formData); // sends data to the postComment func
                       setSubmitting(false);
@@ -140,19 +142,19 @@ const Post = () => {
                     }, 400);
                     setTimeout(() => {
                       getCommentData(); // Gets new comment and displays in div
-                    }, 2000)
+                    }, 2000);
                   }}
                 >
                   {({ isSubmitting }) => (
                     <Form className="commentForm">
                       <div className="nameDiv">
                         <label htmlFor="name">Name</label>
-                      <Field type="text" name="name"/>
-                      <ErrorMessage name="name" component="div" />
+                        <Field type="text" name="name" />
+                        <ErrorMessage name="name" component="div" />
                       </div>
                       <div className="emailDiv">
                         <label htmlFor="email">Email</label>
-                        <Field type="email" name="email"/>
+                        <Field type="email" name="email" />
                         <ErrorMessage name="email" component="div" />
                       </div>
                       <div className="commentDiv">
@@ -169,12 +171,12 @@ const Post = () => {
               </div>
             </div>
           </div>
-        ) 
-        : ('') // If no post to display, display nothing
+        ) : (
+          ''
+        ) // If no post to display, display nothing
       }
     </StyledPost>
-  )
-}
+  );
+};
 
-
-export default Post
+export default Post;

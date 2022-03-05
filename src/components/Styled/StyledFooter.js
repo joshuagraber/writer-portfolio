@@ -1,15 +1,14 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledFooter = styled.footer`
   width: 100%;
-  background: ${props => props.currentColors.bg};
-  color: ${props => props.currentColors.text};
-  
+  background: ${(props) => props.currentColors.bg};
+  color: ${(props) => props.currentColors.text};
 
   .footerWrap {
     width: 100%;
-    background: ${props => props.currentColors.bg};
-    border-top: 2px solid ${props => props.currentColors.accentPop};
+    background: ${(props) => props.currentColors.bg};
+    border-top: 2px solid ${(props) => props.currentColors.accentPop};
     border-radius: 5px 5px 0 0;
   }
   .footerLinks {
@@ -26,12 +25,12 @@ export const StyledFooter = styled.footer`
   }
   .socialLink a {
     font-size: 1.7rem;
-    color: ${props => props.currentColors.text};
+    color: ${(props) => props.currentColors.text};
     transition: 0.2s all;
   }
   .socialLink a:active,
   .socialLink a:focus {
-    transform: scale(.97);
+    transform: scale(0.97);
   }
 
   @media (min-width: 600px) {
@@ -39,4 +38,4 @@ export const StyledFooter = styled.footer`
       align-items: flex-end;
     }
   }
-`
+`;

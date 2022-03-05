@@ -3,10 +3,9 @@ import { useEffect, useState } from 'react';
 // Data
 import { colors } from '../data';
 
-
 export const useCurrentColors = () => {
-  const [ isDarkMode, setIsDarkMode ] = useState(true);
-  const [ currentColors, setCurrentColors ] = useState(colors.dark);
+  const [isDarkMode, setIsDarkMode] = useState(true);
+  const [currentColors, setCurrentColors] = useState(colors.dark);
 
   useEffect(() => {
     if (!isDarkMode) {
@@ -14,7 +13,7 @@ export const useCurrentColors = () => {
     } else if (isDarkMode) {
       setCurrentColors(colors.dark);
     }
-  }, [currentColors, setCurrentColors, isDarkMode])
+  }, [currentColors, setCurrentColors, isDarkMode]);
 
-  return [ isDarkMode, setIsDarkMode, currentColors]
-}
+  return [isDarkMode, setIsDarkMode, currentColors];
+};

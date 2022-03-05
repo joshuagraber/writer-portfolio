@@ -1,7 +1,5 @@
 import { useEffect } from 'react';
-import { useLocation } from "react-router-dom";
-
-
+import { useLocation } from 'react-router-dom';
 
 // Scrolls to top at each page change
 export default function ScrollToTop() {

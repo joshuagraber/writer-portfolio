@@ -1,8 +1,8 @@
-import styled from "styled-components";
+import styled from 'styled-components';
 
 export const StyledAbout = styled.div`
   width: 100%;
-  background-color: ${props => props.currentColors.bg};
+  background-color: ${(props) => props.currentColors.bg};
 
   .about {
     width: 95%;
@@ -13,20 +13,23 @@ export const StyledAbout = styled.div`
     flex-direction: column;
     gap: 20px;
   }
+
   .about h2 {
     text-align: center;
     font-size: 1.9rem;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
   }
+
   .about .profileImg {
     display: block;
     width: 70%;
     max-width: 350px;
-    border: 2px solid ${props => props.currentColors.accentDark};
+    border: 2px solid ${(props) => props.currentColors.accentDark};
     border-radius: 50%;
-    box-shadow: -1px 2px 2px 1px ${props => props.currentColors.accent};
+    box-shadow: -1px 2px 2px 1px ${(props) => props.currentColors.accent};
     margin: 1rem auto;
   }
+
   .about p {
     line-height: 2;
   }
@@ -44,8 +47,7 @@ export const StyledAbout = styled.div`
       font-size: 2.5rem;
     }
   }
-
-`
+`;
 
 export const StyledWork = styled.div`
   .work {
@@ -57,7 +59,7 @@ export const StyledWork = styled.div`
   .work h2 {
     text-align: center;
     font-size: 1.9rem;
-    letter-spacing: .2rem;
+    letter-spacing: 0.2rem;
     margin-bottom: 2rem;
   }
 
@@ -70,7 +72,7 @@ export const StyledWork = styled.div`
   .innerWorkNav li {
     flex: 1;
     height: 40px;
-    background: rgba(0,0,0, .3);
+    background: rgba(0, 0, 0, 0.3);
     padding: 1.5rem 1rem;
     border-radius: 10px 10px 0 0;
     font-size: 1.1rem;
@@ -83,12 +85,12 @@ export const StyledWork = styled.div`
   }
 
   .innerWorkNav li.active {
-    background: ${props => props.currentColors.accentPop};
+    background: ${(props) => props.currentColors.accentPop};
   }
 
   .workInner {
     padding: 2rem 1rem;
-    border: 3px solid ${props => props.currentColors.accentPop};
+    border: 3px solid ${(props) => props.currentColors.accentPop};
     border-radius: 0 0 10px 10px;
   }
 
@@ -119,4 +121,4 @@ export const StyledWork = styled.div`
       font-size: 2.5rem;
     }
   }
-`
+`;

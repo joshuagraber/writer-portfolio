@@ -8,22 +8,26 @@ const DarkModeToggle = () => {
 
   const handleToggleClick = () => {
     setIsDarkMode(!isDarkMode);
-  }
+  };
 
   return (
-    <StyledToggle 
-      currentColors={currentColors}
-      onClick={handleToggleClick}>
+    <StyledToggle currentColors={currentColors} onClick={handleToggleClick}>
       <div className="togWrap">
-        {isDarkMode ? 
-          (<i className="fas fa-sun"/>) : 
-          (<i className="fas fa-moon"/>)}
-        {isDarkMode ? 
-          (<div className="togText"><span>Light</span><span>Mode</span></div>) : 
-          (<div className="togText"><span>Dark</span><span>Mode</span></div>)}
+        {isDarkMode ? <i className="fas fa-sun" /> : <i className="fas fa-moon" />}
+        {isDarkMode ? (
+          <div className="togText">
+            <span>Light</span>
+            <span>Mode</span>
+          </div>
+        ) : (
+          <div className="togText">
+            <span>Dark</span>
+            <span>Mode</span>
+          </div>
+        )}
       </div>
     </StyledToggle>
-  )
-}
+  );
+};
 
-export default DarkModeToggle
+export default DarkModeToggle;

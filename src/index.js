@@ -7,8 +7,8 @@ import App from './App';
 import { PortfolioContextProvider } from './components/Context/index';
 
 ReactDOM.render(
-    <PortfolioContextProvider>
-      <App />
-    </PortfolioContextProvider>,
+  <PortfolioContextProvider>
+    <App />
+  </PortfolioContextProvider>,
   document.getElementById('root')
 );
